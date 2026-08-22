@@ -35,7 +35,7 @@ interface ResponsiveHeroBannerProps {
 
 const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
     logoUrl = "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=200&auto=format&fit=crop",
-    backgroundImageUrl = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=3840&auto=format&fit=crop",
+    backgroundImageUrl = "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=3840&auto=format&fit=crop",
     navLinks = [
         { label: "Home", href: "#", isActive: true },
         { label: "Missions", href: "#" },
@@ -72,26 +72,26 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                 alt=""
                 className="w-full h-full object-cover absolute top-0 right-0 bottom-0 left-0"
             />
-            <div className="pointer-events-none absolute inset-0 ring-1 ring-black/30" />
-            <div className="absolute inset-0 bg-black/40" />
+            <div className="pointer-events-none absolute inset-0 ring-1 ring-slate-900/5" />
+            <div className="absolute inset-0 bg-white/85 backdrop-blur-sm" />
 
             <header className="z-10 xl:top-4 relative">
                 <div className="mx-6">
                     <div className="flex items-center justify-between pt-4">
                         <a
                             href="#"
-                            className="inline-flex items-center justify-center font-bold text-xl text-white tracking-tighter"
+                            className="inline-flex items-center justify-center font-bold text-xl text-slate-900 tracking-tighter"
                         >
                             Dr. Jethwani
                         </a>
 
                         <nav className="hidden md:flex items-center gap-2">
-                            <div className="flex items-center gap-1 rounded-full bg-white/5 px-1 py-1 ring-1 ring-white/10 backdrop-blur">
+                            <div className="flex items-center gap-1 rounded-full bg-white/50 px-1 py-1 ring-1 ring-slate-200 shadow-sm backdrop-blur">
                                 {navLinks.map((link, index) => (
                                     <a
                                         key={index}
                                         href={link.href}
-                                        className={`px-3 py-2 text-sm font-medium hover:text-white font-sans transition-colors ${link.isActive ? 'text-white/90' : 'text-white/80'
+                                        className={`px-3 py-2 text-sm font-medium hover:text-slate-900 font-sans transition-colors ${link.isActive ? 'text-slate-900' : 'text-slate-600'
                                             }`}
                                     >
                                         {link.label}
@@ -99,7 +99,7 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                                 ))}
                                 <a
                                     href={ctaButtonHref}
-                                    className="ml-1 inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-2 text-sm font-medium text-neutral-900 hover:bg-white/90 font-sans transition-colors"
+                                    className="ml-1 inline-flex items-center gap-2 rounded-full bg-slate-900 px-3.5 py-2 text-sm font-medium text-white hover:bg-slate-800 font-sans transition-colors"
                                 >
                                     {ctaButtonText}
                                     <ArrowRight className="h-4 w-4" />
@@ -109,14 +109,14 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
 
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur z-50"
+                            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/80 ring-1 ring-slate-200 shadow-sm backdrop-blur z-50"
                             aria-expanded={mobileMenuOpen}
                             aria-label="Toggle menu"
                         >
                             {mobileMenuOpen ? (
-                                <X className="h-5 w-5 text-white/90" />
+                                <X className="h-5 w-5 text-slate-700" />
                             ) : (
-                                <Menu className="h-5 w-5 text-white/90" />
+                                <Menu className="h-5 w-5 text-slate-700" />
                             )}
                         </button>
                     </div>
@@ -124,12 +124,12 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                 
                 {/* Mobile Menu */}
                 {mobileMenuOpen && (
-                    <div className="md:hidden absolute top-full left-0 w-full bg-black/90 backdrop-blur-md pt-4 pb-6 px-6 mt-2 flex flex-col gap-4 shadow-xl border-b border-white/10">
+                    <div className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md pt-4 pb-6 px-6 mt-2 flex flex-col gap-4 shadow-xl border-b border-slate-200">
                         {navLinks.map((link, index) => (
                             <a
                                 key={index}
                                 href={link.href}
-                                className="text-base font-medium text-white/80 hover:text-white"
+                                className="text-base font-medium text-slate-600 hover:text-slate-900"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
                                 {link.label}
@@ -137,7 +137,7 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                         ))}
                         <a
                             href={ctaButtonHref}
-                            className="inline-flex items-center gap-2 text-base font-semibold text-white/90 hover:text-white mt-2"
+                            className="inline-flex items-center gap-2 text-base font-semibold text-slate-900 hover:text-blue-600 mt-2"
                             onClick={() => setMobileMenuOpen(false)}
                         >
                             {ctaButtonText} <ArrowRight className="h-4 w-4" />
@@ -149,53 +149,53 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
             <div className="z-10 relative">
                 <div className="sm:pt-28 md:pt-32 lg:pt-40 max-w-7xl mx-auto pt-28 px-6 pb-16">
                     <div className="mx-auto max-w-3xl text-center">
-                        <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/10 px-2.5 py-2 ring-1 ring-white/15 backdrop-blur animate-fade-slide-in-1">
-                            <span className="inline-flex items-center text-xs font-medium text-neutral-900 bg-white/90 rounded-full py-0.5 px-2 font-sans">
+                        <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/60 px-2.5 py-2 ring-1 ring-slate-200 shadow-sm backdrop-blur animate-fade-slide-in-1">
+                            <span className="inline-flex items-center text-xs font-medium text-white bg-blue-600 rounded-full py-0.5 px-2 font-sans">
                                 {badgeLabel}
                             </span>
-                            <span className="text-sm font-medium text-white/90 font-sans">
+                            <span className="text-sm font-medium text-slate-700 font-sans">
                                 {badgeText}
                             </span>
                         </div>
 
-                        <h1 className="sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-4xl text-white tracking-tight font-instrument-serif font-normal animate-fade-slide-in-2">
+                        <h1 className="sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-4xl text-slate-900 tracking-tight font-instrument-serif font-normal animate-fade-slide-in-2">
                             {title}
                             <br className="hidden sm:block" />
                             {titleLine2}
                         </h1>
 
-                        <p className="sm:text-lg animate-fade-slide-in-3 text-base text-white/80 max-w-2xl mt-6 mx-auto">
+                        <p className="sm:text-lg animate-fade-slide-in-3 text-base text-slate-600 max-w-2xl mt-6 mx-auto">
                             {description}
                         </p>
 
                         <div className="flex flex-col sm:flex-row sm:gap-4 mt-10 gap-3 items-center justify-center animate-fade-slide-in-4">
                             <a
                                 href={primaryButtonHref}
-                                className="inline-flex items-center gap-2 hover:bg-white/15 text-sm font-medium text-white bg-white/10 ring-white/15 ring-1 rounded-full py-3 px-5 font-sans transition-colors"
+                                className="inline-flex items-center gap-2 hover:bg-slate-50 text-sm font-medium text-slate-900 bg-white ring-slate-200 shadow-sm ring-1 rounded-full py-3 px-5 font-sans transition-colors"
                             >
                                 {primaryButtonText}
                                 <ArrowRight className="h-4 w-4" />
                             </a>
                             <a
                                 href={secondaryButtonHref}
-                                className="inline-flex items-center gap-2 rounded-full bg-transparent px-5 py-3 text-sm font-medium text-white/90 hover:text-white font-sans transition-colors"
+                                className="inline-flex items-center gap-2 rounded-full bg-transparent px-5 py-3 text-sm font-medium text-slate-700 hover:text-slate-900 font-sans transition-colors"
                             >
                                 {secondaryButtonText}
-                                <Play className="w-4 h-4 fill-white/90" />
+                                <Play className="w-4 h-4 fill-slate-700" />
                             </a>
                         </div>
                     </div>
 
                     <div className="mx-auto mt-20 max-w-5xl">
-                        <p className="animate-fade-slide-in-1 text-sm text-white/70 text-center uppercase tracking-widest">
+                        <p className="animate-fade-slide-in-1 text-sm text-slate-500 text-center uppercase tracking-widest">
                             {partnersTitle}
                         </p>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 animate-fade-slide-in-2 text-white/70 mt-6 items-center justify-items-center gap-4">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 animate-fade-slide-in-2 text-slate-500 mt-6 items-center justify-items-center gap-4">
                             {partners.map((partner, index) => (
                                 <a
                                     key={index}
                                     href={partner.href}
-                                    className="inline-flex items-center justify-center bg-center w-[120px] h-[36px] bg-cover rounded opacity-50 hover:opacity-100 transition-opacity"
+                                    className="inline-flex items-center justify-center bg-center w-[120px] h-[36px] bg-cover rounded opacity-40 hover:opacity-80 grayscale transition-opacity"
                                     style={{ backgroundImage: `url(${partner.logoUrl})` }}
                                 />
                             ))}

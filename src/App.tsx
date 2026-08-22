@@ -155,11 +155,11 @@ export default function App() {
       </section>
 
       {/* FOOTER & CONTACT */}
-      <footer id="contact" className="bg-[#020617] text-white pt-24 pb-12 px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-white/10 pb-16">
+      <footer id="contact" className="bg-slate-100 text-slate-900 pt-24 pb-12 px-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-slate-200 pb-16">
           <div className="lg:col-span-2">
             <div className="font-bold text-3xl tracking-tighter mb-4">Dr. Jethwani</div>
-            <p className="text-slate-400 text-sm leading-relaxed max-w-sm mb-8">
+            <p className="text-slate-600 text-sm leading-relaxed max-w-sm mb-8">
                {data.profile.department}<br/>
                {data.profile.university}
             </p>
@@ -167,12 +167,12 @@ export default function App() {
           
           <div>
             <h4 className="font-bold mb-6 tracking-wide uppercase text-sm">Contact Info</h4>
-            <div className="space-y-4 text-sm text-slate-300">
-              <a href={`mailto:${data.contact.email}`} className="flex items-center gap-3 hover:text-white transition-colors">
+            <div className="space-y-4 text-sm text-slate-700">
+              <a href={`mailto:${data.contact.email}`} className="flex items-center gap-3 hover:text-blue-600 transition-colors">
                 <Mail size={16} className="text-blue-500" />
                 {data.contact.email}
               </a>
-              <a href="tel:+917990700545" className="flex items-center gap-3 hover:text-white transition-colors">
+              <a href="tel:+917990700545" className="flex items-center gap-3 hover:text-blue-600 transition-colors">
                 <Phone size={16} className="text-blue-500" />
                 +91 7990700545
               </a>
@@ -190,10 +190,10 @@ export default function App() {
           <div>
              <h4 className="font-bold mb-6 tracking-wide uppercase text-sm">Socials</h4>
              <div className="flex gap-4">
-                <a href={data.contact.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-blue-600 transition-colors">
+                <a href={data.contact.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-colors">
                   <Linkedin size={18} />
                 </a>
-                <a href={data.contact.googleScholar} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-blue-600 transition-colors">
+                <a href={data.contact.googleScholar} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-colors">
                   <GraduationCap size={18} />
                 </a>
              </div>
