@@ -15,7 +15,7 @@ const getIconForInterest = (interest: string) => {
 
 export default function App() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#f8fafc] text-slate-900 font-sans selection:bg-blue-200 selection:text-blue-900">
+    <div className="flex flex-col min-h-screen bg-[#030407] text-slate-200 font-sans selection:bg-blue-500/30 selection:text-blue-200">
       
       <ResponsiveHeroBanner 
         badgeLabel="Latest"
@@ -40,21 +40,21 @@ export default function App() {
       />
 
       {/* AI SERVICES (Expertise) */}
-      <section id="research" className="py-24 px-8 bg-[#f8fafc] overflow-hidden">
+      <section id="research" className="py-24 px-8 bg-[#030407] overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }} className="lg:col-span-4 flex flex-col justify-center">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4 tracking-tight">AI services</h2>
-            <p className="text-slate-600 leading-relaxed text-lg">
+            <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">AI services</h2>
+            <p className="text-slate-400 leading-relaxed text-lg">
               {data.profile.name} offers advanced research and mentorship in cutting-edge AI and machine learning domains.
             </p>
           </motion.div>
           <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-16">
             {data.researchInterests.map((interest, idx) => (
               <motion.div key={idx} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: idx * 0.1 }} className="flex flex-col gap-5">
-                <div className="w-14 h-14 rounded-full bg-[#4a72d4] flex items-center justify-center text-white shadow-md">
+                <div className="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 shadow-md ring-1 ring-blue-500/30">
                   {getIconForInterest(interest)}
                 </div>
-                <h3 className="text-2xl font-semibold text-slate-900">{interest}</h3>
+                <h3 className="text-2xl font-semibold text-white">{interest}</h3>
               </motion.div>
             ))}
           </div>
@@ -62,36 +62,36 @@ export default function App() {
       </section>
 
       {/* ABOUT SECTION */}
-      <section id="about" className="py-24 px-8 bg-white border-y border-slate-200 overflow-hidden">
+      <section id="about" className="py-24 px-8 bg-[#05070a] border-y border-white/5 overflow-hidden">
         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.7 }} className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="text-sm font-bold tracking-widest uppercase text-blue-600">About Me</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
+          <h2 className="text-sm font-bold tracking-widest uppercase text-blue-500">About Me</h2>
+          <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight">
             "{data.profile.tagline}"
           </h3>
-          <p className="text-lg text-slate-600 leading-relaxed">
+          <p className="text-lg text-slate-400 leading-relaxed">
             {data.profile.about}
           </p>
         </motion.div>
       </section>
 
       {/* PUBLICATIONS & TEACHING */}
-      <section id="publications" className="py-24 px-8 bg-[#f8fafc] overflow-hidden">
+      <section id="publications" className="py-24 px-8 bg-[#030407] overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           
           {/* Publications */}
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
-            <h2 className="text-3xl font-bold text-slate-900 mb-10 tracking-tight">Selected Publications</h2>
+            <h2 className="text-3xl font-bold text-white mb-10 tracking-tight">Selected Publications</h2>
             <div className="space-y-6">
               {data.publications.map((pub, idx) => (
-                <div key={idx} className="p-6 bg-white rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                  <div className="font-semibold text-lg text-slate-900 mb-2 leading-snug">{pub.title}</div>
-                  <div className="text-sm text-slate-600 mb-1">{pub.authors}</div>
-                  <div className="text-sm font-medium text-blue-600">{pub.venue}, {pub.year}</div>
+                <div key={idx} className="p-6 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="font-semibold text-lg text-white mb-2 leading-snug">{pub.title}</div>
+                  <div className="text-sm text-slate-400 mb-1">{pub.authors}</div>
+                  <div className="text-sm font-medium text-blue-400">{pub.venue}, {pub.year}</div>
                 </div>
               ))}
             </div>
             <div className="mt-8">
-               <a href={data.contact.googleScholar} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors uppercase tracking-wider">
+               <a href={data.contact.googleScholar} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-blue-500 hover:text-blue-400 transition-colors uppercase tracking-wider">
                  View Google Scholar <ChevronRight size={16} />
                </a>
             </div>
@@ -99,15 +99,15 @@ export default function App() {
 
           {/* Teaching */}
           <motion.div id="teaching" initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6, delay: 0.2 }}>
-            <h2 className="text-3xl font-bold text-slate-900 mb-10 tracking-tight">Teaching</h2>
+            <h2 className="text-3xl font-bold text-white mb-10 tracking-tight">Teaching</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {data.courses.map((course, idx) => (
-                <div key={idx} className="p-6 bg-white rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                  <div className="w-10 h-10 rounded bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+                <div key={idx} className="p-6 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="w-10 h-10 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center mb-4 ring-1 ring-blue-500/30">
                     <GraduationCap size={20} />
                   </div>
-                  <h4 className="font-bold text-slate-900 mb-2">{course.title}</h4>
-                  <p className="text-sm text-slate-600 leading-relaxed">{course.description}</p>
+                  <h4 className="font-bold text-white mb-2">{course.title}</h4>
+                  <p className="text-sm text-slate-400 leading-relaxed">{course.description}</p>
                 </div>
               ))}
             </div>
@@ -117,18 +117,18 @@ export default function App() {
       </section>
 
       {/* EXPERIENCE & AWARDS */}
-      <section id="experience" className="py-24 px-8 bg-white border-y border-slate-200 overflow-hidden">
+      <section id="experience" className="py-24 px-8 bg-[#05070a] border-y border-white/5 overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           
           {/* Experience */}
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }}>
-             <h2 className="text-3xl font-bold text-slate-900 mb-10 tracking-tight">Professional Timeline</h2>
+             <h2 className="text-3xl font-bold text-white mb-10 tracking-tight">Professional Timeline</h2>
              <div className="space-y-8">
               {data.experience.map((exp, idx) => (
-                <div key={idx} className={`relative pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full ${idx === 0 ? 'before:bg-blue-600' : 'before:bg-slate-300'}`}>
-                  <h4 className="text-xl font-bold text-slate-900">{exp.position}</h4>
-                  {exp.organization && <div className="text-slate-600 mt-1">{exp.organization}</div>}
-                  <div className="text-sm font-medium text-slate-400 mt-2 uppercase tracking-wider">{exp.years}</div>
+                <div key={idx} className={`relative pl-8 before:content-[''] before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full ${idx === 0 ? 'before:bg-blue-500 before:shadow-[0_0_10px_rgba(59,130,246,0.8)]' : 'before:bg-white/20'}`}>
+                  <h4 className="text-xl font-bold text-white">{exp.position}</h4>
+                  {exp.organization && <div className="text-slate-400 mt-1">{exp.organization}</div>}
+                  <div className="text-sm font-medium text-slate-500 mt-2 uppercase tracking-wider">{exp.years}</div>
                 </div>
               ))}
             </div>
@@ -136,15 +136,15 @@ export default function App() {
 
           {/* Awards */}
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6, delay: 0.2 }}>
-            <h2 className="text-3xl font-bold text-slate-900 mb-10 tracking-tight">Awards & Honors</h2>
+            <h2 className="text-3xl font-bold text-white mb-10 tracking-tight">Awards & Honors</h2>
             <div className="space-y-6">
               {data.awards.map((award, idx) => (
-                <div key={idx} className="flex gap-4 p-6 bg-[#f8fafc] rounded-xl border border-slate-100">
-                  <AwardIcon className="text-amber-500 shrink-0" size={24} />
+                <div key={idx} className="flex gap-4 p-6 bg-white/5 rounded-xl border border-white/10">
+                  <AwardIcon className="text-amber-400 shrink-0" size={24} />
                   <div>
-                    <h4 className="font-bold text-slate-900">{award.title}</h4>
-                    {award.organization && <p className="text-slate-600 mt-1">{award.organization}</p>}
-                    <p className="text-sm font-medium text-blue-600 mt-2">{award.year}</p>
+                    <h4 className="font-bold text-white">{award.title}</h4>
+                    {award.organization && <p className="text-slate-400 mt-1">{award.organization}</p>}
+                    <p className="text-sm font-medium text-blue-400 mt-2">{award.year}</p>
                   </div>
                 </div>
               ))}
@@ -155,24 +155,24 @@ export default function App() {
       </section>
 
       {/* FOOTER & CONTACT */}
-      <footer id="contact" className="bg-slate-100 text-slate-900 pt-24 pb-12 px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-slate-200 pb-16">
+      <footer id="contact" className="bg-[#020305] text-slate-300 pt-24 pb-12 px-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-white/10 pb-16">
           <div className="lg:col-span-2">
-            <div className="font-bold text-3xl tracking-tighter mb-4">Dr. Jethwani</div>
-            <p className="text-slate-600 text-sm leading-relaxed max-w-sm mb-8">
+            <div className="font-bold text-3xl text-white tracking-tighter mb-4">Dr. Jethwani</div>
+            <p className="text-slate-500 text-sm leading-relaxed max-w-sm mb-8">
                {data.profile.department}<br/>
                {data.profile.university}
             </p>
           </div>
           
           <div>
-            <h4 className="font-bold mb-6 tracking-wide uppercase text-sm">Contact Info</h4>
-            <div className="space-y-4 text-sm text-slate-700">
-              <a href={`mailto:${data.contact.email}`} className="flex items-center gap-3 hover:text-blue-600 transition-colors">
+            <h4 className="font-bold mb-6 tracking-wide uppercase text-sm text-white">Contact Info</h4>
+            <div className="space-y-4 text-sm text-slate-400">
+              <a href={`mailto:${data.contact.email}`} className="flex items-center gap-3 hover:text-blue-400 transition-colors">
                 <Mail size={16} className="text-blue-500" />
                 {data.contact.email}
               </a>
-              <a href="tel:+917990700545" className="flex items-center gap-3 hover:text-blue-600 transition-colors">
+              <a href="tel:+917990700545" className="flex items-center gap-3 hover:text-blue-400 transition-colors">
                 <Phone size={16} className="text-blue-500" />
                 +91 7990700545
               </a>
@@ -188,18 +188,18 @@ export default function App() {
           </div>
 
           <div>
-             <h4 className="font-bold mb-6 tracking-wide uppercase text-sm">Socials</h4>
+             <h4 className="font-bold mb-6 tracking-wide uppercase text-sm text-white">Socials</h4>
              <div className="flex gap-4">
-                <a href={data.contact.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-colors">
+                <a href={data.contact.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-colors ring-1 ring-white/10 hover:ring-blue-600">
                   <Linkedin size={18} />
                 </a>
-                <a href={data.contact.googleScholar} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-colors">
+                <a href={data.contact.googleScholar} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-colors ring-1 ring-white/10 hover:ring-blue-600">
                   <GraduationCap size={18} />
                 </a>
              </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 uppercase tracking-widest gap-4 text-center">
+        <div className="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-600 uppercase tracking-widest gap-4 text-center">
           <div>© {new Date().getFullYear()} {data.profile.name}</div>
           <div>All rights reserved.</div>
         </div>
